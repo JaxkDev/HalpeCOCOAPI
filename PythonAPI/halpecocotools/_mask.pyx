@@ -37,19 +37,19 @@ cdef extern from "maskApi.h":
         siz h,
         siz w,
         siz m,
-        uint* cnts,
-        void rlesInit( RLE **R, siz n )
-        void rleEncode( RLE *R, const byte *M, siz h, siz w, siz n )
-        void rleDecode( const RLE *R, byte *mask, siz n )
-        void rleMerge( const RLE *R, RLE *M, siz n, int intersect )
-        void rleArea( const RLE *R, siz n, uint *a )
-        void rleIou( RLE *dt, RLE *gt, siz m, siz n, byte *iscrowd, double *o )
-        void bbIou( BB dt, BB gt, siz m, siz n, byte *iscrowd, double *o )
-        void rleToBbox( const RLE *R, BB bb, siz n )
-        void rleFrBbox( RLE *R, const BB bb, siz h, siz w, siz n )
-        void rleFrPoly( RLE *R, const double *xy, siz k, siz h, siz w )
-        char* rleToString( const RLE *R )
-        void rleFrString( RLE *R, char *s, siz h, siz w )
+    uint* cnts,
+    void rlesInit( RLE **R, siz n )
+    void rleEncode( RLE *R, const byte *M, siz h, siz w, siz n )
+    void rleDecode( const RLE *R, byte *mask, siz n )
+    void rleMerge( const RLE *R, RLE *M, siz n, int intersect )
+    void rleArea( const RLE *R, siz n, uint *a )
+    void rleIou( RLE *dt, RLE *gt, siz m, siz n, byte *iscrowd, double *o )
+    void bbIou( BB dt, BB gt, siz m, siz n, byte *iscrowd, double *o )
+    void rleToBbox( const RLE *R, BB bb, siz n )
+    void rleFrBbox( RLE *R, const BB bb, siz h, siz w, siz n )
+    void rleFrPoly( RLE *R, const double *xy, siz k, siz h, siz w )
+    char* rleToString( const RLE *R )
+    void rleFrString( RLE *R, char *s, siz h, siz w )
 
 # python class to wrap RLE array in C
 # the class handles the memory allocation and deallocation
