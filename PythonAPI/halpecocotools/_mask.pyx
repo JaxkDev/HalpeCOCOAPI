@@ -37,7 +37,7 @@ cdef extern from "maskApi.h":
         siz h,
         siz w,
         siz m,
-    uint* cnts,
+        uint* cnts
     void rlesInit( RLE **R, siz n )
     void rleEncode( RLE *R, const byte *M, siz h, siz w, siz n )
     void rleDecode( const RLE *R, byte *mask, siz n )
